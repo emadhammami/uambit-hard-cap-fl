@@ -19,14 +19,7 @@
 
 **Figures (saved as files; browse all under [`src/results/`](./src/results)):**
 
-<p align="center">
-  <img src="src/results/uambit_E16_b0.50KiB_acc.png" width="45%" alt="Accuracy vs rounds (0.5 KiB cap)" />
-  <img src="src/results/uambit_E16_b0.50KiB_bytes.png" width="45%" alt="Uplink bytes vs rounds (0.5 KiB cap)" />
-</p>
-
-<p align="center">
-  <img src="src/results/uambit_E16_b0.50KiB_ecdf.png" width="45%" alt="Uplink ECDF (0.5 KiB cap)" />
-</p>
+<p align="center"> <a href="notebooks/budget050_acc.pdf"> <img src="notebooks/plots/budget050_acc.png" width="49%" alt="Accuracy vs rounds (0.5 KiB cap)" /> </a> <a href="notebooks/budget050_uplink.pdf"> <img src="notebooks/plots/budget050_uplink.png" width="49%" alt="Uplink bytes vs rounds (0.5 KiB cap)" /> </a> </p>
 
 ---
 
