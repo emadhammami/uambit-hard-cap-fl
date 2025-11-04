@@ -55,7 +55,7 @@ It prints a compact log slice (warnings + “Running …” lines) while keeping
 ## Quickstart
 
 ### Colab
-Open the badge above and run `Untitled204.ipynb`. Figures will be saved to `src/results/`.
+Open the badge above and run `uambit_budget_cap.ipynb`. Figures will be saved to `src/results/`.
 
 ### Local
 ```bash
