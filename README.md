@@ -45,7 +45,7 @@ You’ll find **two views of the same experiment**:
 
 If you prefer a **single file** with **all code + printed logs**, use:
 
-- **[`Untitled204.ipynb`](./Untitled204.ipynb)**
+- **[`notebooks/uambit_budget_cap.ipynb`](notebooks/uambit_budget_cap)**
 
 This notebook runs end-to-end and saves figures to `src/results/`.  
 It prints a compact log slice (warnings + “Running …” lines) while keeping plots as files.
