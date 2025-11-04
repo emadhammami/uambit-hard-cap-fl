@@ -15,8 +15,14 @@
 | EF-Sign | 0.590 | 1.5 | 0.7115 |
 
 <p align="center">
-  <img src="notebooks/plots/all_methods_ecdf_overlay.png" width="65%" alt="ECDF of realized bytes"/>
+  <a href="notebooks/budget050_acc.pdf">
+    <img src="notebooks/plots/budget050_acc.png" width="49%" alt="Accuracy vs rounds (0.5 KiB cap)" />
+  </a>
+  <a href="notebooks/budget050_uplink.pdf">
+    <img src="notebooks/plots/budget050_uplink.png" width="49%" alt="Uplink bytes vs rounds (0.5 KiB cap)" />
+  </a>
 </p>
+
 
 ## Quickstart
 Open the Colab and run end-to-end (dataset download, training, plots):
