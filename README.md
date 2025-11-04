@@ -17,7 +17,6 @@
 | QSGD-4 | 0.720 | 2.9 | 0.7308 |
 | EF-Sign | 0.590 | 1.5 | 0.7115 |
 
-**Figures (saved as files; browse all under [`src/results/`](./src/results)):**
 
 <p align="center"> <a href="notebooks/budget050_acc.pdf"> <img src="notebooks/plots/budget050_acc.png" width="49%" alt="Accuracy vs rounds (0.5 KiB cap)" /> </a> <a href="notebooks/budget050_uplink.pdf"> <img src="notebooks/plots/budget050_uplink.png" width="49%" alt="Uplink bytes vs rounds (0.5 KiB cap)" /> </a> </p>
 
