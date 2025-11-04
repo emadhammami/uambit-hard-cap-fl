@@ -20,7 +20,7 @@ from .model_data import build_lenet5, load_breastmnist
 
 @dataclass
 class RunConfig:
-    rounds: int = 15
+    rounds: int = 50
     local_epochs: int = 1
     batch_size: int = 128
     clients_per_round: int = 3
@@ -174,7 +174,7 @@ def run_e16(cfg: RunConfig):
 
 
 def run_all(methods=("uambit", "topk", "stc", "qsgd8", "qsgd4", "efsign"),
-            budget_kib=0.5, rounds=15, clients=3, mask_ratio_dense=None):
+            budget_kib=0.5, rounds=50, clients=3, mask_ratio_dense=None):
     results = {}
     for m in methods:
         print("\n==============================")
