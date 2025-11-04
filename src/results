@@ -656,7 +656,8 @@
             "  plots/uambit_E16_b0.50KiB_ecdf.png\n"
           ]
         }
-      ],
-      "source": [
+      ]
+
+    }
   ]
 }
