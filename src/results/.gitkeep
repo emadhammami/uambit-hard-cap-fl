@@ -1,1 +1,2 @@
 
+The folder `src/results/` is included via `.gitkeep` and will store all generated plots.
