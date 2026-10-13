@@ -1,8 +1,12 @@
 # UAMBIT: Hard-Cap Federated Compression with Predictable Uplink
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emadhammami/uambit-hard-cap-fl/blob/main/Untitled204.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emadhammami/uambit-hard-cap-fl/blob/main/notebooks/uambit_budget_cap.ipynb)
 
 **One-liner:** Enforce a strict per-round uplink budget (KiB/client/round) in FL using threshold search + sign+single-scale quantization + error-feedback (single gzip payload). Predictable bytes with competitive accuracy.
+
+## Repository scope
+
+This repository provides a BreastMNIST demonstration and modular research code for byte-budgeted federated update compression. It is not a complete release of all experimental implementations, datasets, or variants evaluated in the broader uAMBIT research study. The figures and numerical results below describe the included BreastMNIST demonstration; they are not independent reproduction of every result in the published paper.
 
 ---
 
@@ -33,8 +37,8 @@ You’ll find **two views of the same experiment**:
   - `model_data.py` — LeNet-5 (fixed pooling) + BreastMNIST loader
   - `experiment.py` — training loop, plotting, runners
   - `utils.py` — packing, flatten/unflatten, seeds, etc.
-- Runner: `scripts/run_all.py` (writes figures).
-- **Outputs (figures only):** `src/results/`.
+- Runner: `notebooks/scripts/run_all.py` (writes figures).
+- **Outputs (figures only):** `plots/` by default.
 
 **Why split it?**
 - Clean separation of concerns → easier to review and reuse.
@@ -47,7 +51,7 @@ If you prefer a **single file** with **all code + printed logs**, use:
 
 - **[`notebooks/uambit_budget_cap.ipynb`](./notebooks/uambit_budget_cap.ipynb)**
 
-This notebook runs end-to-end and saves figures to `src/results/`.  
+This notebook contains the end-to-end experiment and plotting workflow.  
 It prints a compact log slice (warnings + “Running …” lines) while keeping plots as files.
 
 ---
@@ -55,10 +59,10 @@ It prints a compact log slice (warnings + “Running …” lines) while keeping
 ## Quickstart
 
 ### Colab
-Open the badge above and run `uambit_budget_cap.ipynb`. Figures will be saved to `src/results/`.
+Open the badge above to open `notebooks/uambit_budget_cap.ipynb`. See the notebook for its output paths.
 
 ### Local
 ```bash
 pip install -r requirements.txt
-python scripts/run_all.py
-# figures will be written to: src/results/
+PYTHONPATH=src python notebooks/scripts/run_all.py
+# figures will be written to: plots/
