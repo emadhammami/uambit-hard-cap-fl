@@ -2,7 +2,7 @@
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emadhammami/uambit-hard-cap-fl/blob/main/notebooks/uambit_budget_cap.ipynb)
 
-**One-liner:** Enforce a strict per-round uplink budget (KiB/client/round) in FL using threshold search + sign+single-scale quantization + error-feedback (single gzip payload). Predictable bytes with competitive accuracy.
+This repository explores byte-budgeted federated update compression using threshold search, sign-and-scale encoding, and error feedback.
 
 ## Repository scope
 
@@ -10,7 +10,7 @@ This repository provides a BreastMNIST demonstration and modular research code f
 
 ---
 
-## TL;DR results (BreastMNIST, 0.5 KiB cap)
+## BreastMNIST demonstration (0.5 KiB budget)
 
 | Method | Uplink (KiB) | Std (bytes) | Test Acc |
 |---|---:|---:|---:|
@@ -21,16 +21,20 @@ This repository provides a BreastMNIST demonstration and modular research code f
 | QSGD-4 | 0.720 | 2.9 | 0.7308 |
 | EF-Sign | 0.590 | 1.5 | 0.7115 |
 
+In this configuration, several methods have identical test accuracy (0.7308); the table does not establish an accuracy advantage. QSGD-8, QSGD-4, and EF-Sign also exceed the 0.5 KiB reference budget in these results.
 
-<p align="center"> <a href="notebooks/budget050_acc.pdf"> <img src="notebooks/plots/budget050_acc.png" width="49%" alt="Accuracy vs rounds (0.5 KiB cap)" /> </a> <a href="notebooks/budget050_uplink.pdf"> <img src="notebooks/plots/budget050_uplink.png" width="49%" alt="Uplink bytes vs rounds (0.5 KiB cap)" /> </a> </p>
+
+![BreastMNIST accuracy by training round](notebooks/plots/budget050_acc.png)
+
+![Uplink usage by training round](notebooks/plots/budget050_uplink.png)
 
 ---
 
 ## How this repo is organized
 
-You’ll find **two views of the same experiment**:
+The repository contains a Colab notebook and a separate modular implementation for BreastMNIST:
 
-### 1) Production-style (split modules)
+### Modular implementation
 
 - Core code under `src/uambit_cap/`:
   - `compressors.py` — uAMBIT, Top-k(DGC), STC, QSGD-8/4, EF-Sign
@@ -40,19 +44,13 @@ You’ll find **two views of the same experiment**:
 - Runner: `notebooks/scripts/run_all.py` (writes figures).
 - **Outputs (figures only):** `plots/` by default.
 
-**Why split it?**
-- Clean separation of concerns → easier to review and reuse.
-- Reproducible experiments via configs and callable runners.
-- CV-friendly structure (modules, scripts, results folder).
+### Colab notebook
 
-### 2) Single notebook (“notbad” full view)
-
-If you prefer a **single file** with **all code + printed logs**, use:
+The experiment notebook is available at:
 
 - **[`notebooks/uambit_budget_cap.ipynb`](./notebooks/uambit_budget_cap.ipynb)**
 
-This notebook contains the end-to-end experiment and plotting workflow.  
-It prints a compact log slice (warnings + “Running …” lines) while keeping plots as files.
+The notebook includes the training and plotting workflow.
 
 ---
 
@@ -66,3 +64,4 @@ Open the badge above to open `notebooks/uambit_budget_cap.ipynb`. See the notebo
 pip install -r requirements.txt
 PYTHONPATH=src python notebooks/scripts/run_all.py
 # figures will be written to: plots/
+```
